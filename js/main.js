@@ -2,19 +2,10 @@ const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
 
 const renderer = new THREE.WebGLRenderer();
-renderer.setSize( window.innerWidth, window.innerHeight ); //this is the dimentions of the stuff
+renderer.setSize( window.innerWidth, window.innerHeight ); 
 document.body.appendChild( renderer.domElement );
 
-camera.position.z = 15; //move by 5. TO call the scene.add, the bounce is 0,0,0 because we're dealing with 3D. 
-
-// camera = new THREE.PerspectiveCamera(50, window.innerWidth/window.innerHeight,1,1000);
-// camera.position.set(0,0,500);
-// controls = new OrbitControls(camera, renderer .domElement);
-
-// //Lightsue
-// pointlight = new THREE.PointLight("white", 1);
-// PointLight.position.set(200,200,200);
-// scene.add(pointlight);
+camera.position.z = 15; 
 
 //BoxGeometry
 const cubeGeometry = new THREE.BoxGeometry( 1, 1, 1 ); //belongs to the library
@@ -26,7 +17,7 @@ scene.add( cube ); //add to the scene
 const torusGeometry= new THREE.TorusGeometry( 1, 0.3, 16, 100 ); 
 const torusMaterial = new THREE.MeshBasicMaterial( { color: 0xf7017a } ); 
 const torus = new THREE.Mesh( torusGeometry, torusMaterial );
-scene.add( torus ); //add to the scene
+scene.add( torus );
 
 //ConeGeometry
 const coneGeometry = new THREE.ConeGeometry( 1, 2, 20 ); 
@@ -39,11 +30,6 @@ const sphereGeometry = new THREE.SphereGeometry( 1, 32, 16);
 const sphereMaterial = new THREE.MeshBasicMaterial( { color: "violet"} ); 
 const sphere = new THREE.Mesh( sphereGeometry, sphereMaterial );
 scene.add(sphere);
-
-// const sphereGeometry = new THREE.SphereGeometry( 1, 32, 16); 
-// const sphereMaterial = new THREE.MeshPhysicalMaterial (); 
-// const sphere = new THREE.Mesh( sphereGeometry, sphereMaterial );
-// scene.add(sphere);
 
 //cylinderGeometry
 const cylinderGeometry = new THREE.CylinderGeometry( 1, 1, 2, 32 ); 
@@ -67,6 +53,7 @@ sphere.position.y = 8;
 
 cylinder.position.x = 6;
 cylinder.position.y = -5;
+
 
 //Simple Animation
 function animate() {
@@ -93,7 +80,6 @@ function animate() {
     cylinder.rotation.x += 0.01;
     cylinder.rotation.y += 0.01;
     cylinder.rotation.z += 0.01; 
-
     //cube.position.x += 0.05; //either decrement (-) or increment (+) | this moves to the right
     //end animation
 
@@ -102,7 +88,6 @@ function animate() {
 
 animate();
 
-// always save work, dapat ala bilog
 
 
 
